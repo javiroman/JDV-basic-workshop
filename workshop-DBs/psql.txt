@@ -1,3 +1,5 @@
+$ sudo postgresql-setup initdb
+$ sudo systemctl start postgresql.service
 $ sudo -u postgres psql
 postgres=# \du
 

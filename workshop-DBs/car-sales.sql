@@ -135,17 +135,17 @@ INSERT INTO dealersShop VALUES ("C2", "2210ABZ");
 -- Regular/Interactive insertions
 --
 
--- We buy a Audi A3 2000 cc white from dealer C1 with plate 1234ABC
+-- Buy a Audi A3 2000 cc white from dealer C1 with plate 1234ABC
 INSERT INTO carshop VALUES ("1234ABC", "2008", "White");
 INSERT INTO shopModels VALUES ("M1", "1234ABC");
 INSERT INTO dealersShop VALUES ("C1", "1234ABC");
 
--- We buy a BMW 5 Series 2500 cc black from dealer C1 with plate 1234ABC
+-- Buy a BMW 5 Series 2500 cc black from dealer C1 with plate 1234ABC
 INSERT INTO carshop VALUES ("2222ABC", "2010", "black");
 INSERT INTO shopModels VALUES ("M4", "2222ABC");
 INSERT INTO dealersShop VALUES ("C4", "2222ABC");
 
--- We buy a BMW 3 Series 2500 cc black from dealer C1 with plate 1234ABC
+-- Buy a BMW 3 Series 2500 cc black from dealer C1 with plate 1234ABC
 INSERT INTO carshop VALUES ("1111AAA", "2010", "black");
 INSERT INTO shopModels VALUES ("M5", "1111AAA");
 INSERT INTO dealersShop VALUES ("C5", "1111AAA");
