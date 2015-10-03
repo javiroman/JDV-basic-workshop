@@ -2,6 +2,8 @@
 -- Car Repairs database.
 --
 
+\c postgres;
+
 DROP DATABASE IF EXISTS carrepairs;
 CREATE DATABASE carrepairs;
 \c carrepairs;
@@ -66,10 +68,11 @@ INSERT INTO works VALUES
 	('2210ABZ', '2007', NULL, NULL, 'G2');
 
 INSERT INTO repairs VALUES 
-	('R1', 'Paint', 'AAA'),
-	('R2', 'Chapa', 'BBB'),
-	('R3', 'Engine', 'CCC'),
-	('R4', 'Ruedas', 'DDD');
+	('R1', 'Scrach', 'Scrach repair'),
+	('R2', 'Dent', 'Dent repair'),
+	('R3', 'Paintwork', 'Paintwork repair'),
+	('R4', 'Wheels', 'Wheels repair'),
+	('R5', 'Engine', 'Engine repair');
 
 --
 -- Relationship tables initial insertions.
