@@ -12,7 +12,8 @@
 
 	<properties>
 	    <version.teiid>8.7.1.6_2-redhat-6</version.teiid>
-            <version.org.codehaus.mojo.exec.plugin>1.2.1</version.org.codehaus.mojo.exec.plugin>
+	    <!--version.teiid>8.11.0.Final</version.teiid-->
+	    <version.org.codehaus.mojo.exec.plugin>1.2.1</version.org.codehaus.mojo.exec.plugin>
 	</properties>
 
 	<dependencies>
