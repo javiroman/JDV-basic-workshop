@@ -1,10 +1,7 @@
-Simpleclient Quickstart
-================================
+Simple Java Client for Teiid server
+===================================
 
-Level: Beginners
-Technologies: Teiid, JDBC
-Target Product: DV
-Product Versions: DV 6.1
+This is a derivated work from 
 Source: <https://github.com/teiid/teiid-quickstarts>
 
 What is it?
@@ -32,12 +29,6 @@ the pom.xml:
 Notice that the <host> and <port> are preset. To point to a different server and/or port, 
 change "localhost" and/or "31000" arguments, respectively, in the pom.xml.
 
--------------------
-System requirements
--------------------
-
-If you have not done so, please review the System Requirements (../README.md)
-
 #############
 #  Build
 #############
@@ -57,8 +48,7 @@ Example:   mvn install -Dvdb="twitter" -Dsql="select * from tweet where query= '
 
 Note that the query is in quotes so that it is understood as a single argument.
 
-NOTE: To run more advanced queries, it would be better a fully featured Java client, 
-such as SQuirreL [http://www.squirrelsql.org/].
+You can see an execution example in "run.sh" helper.
 
 
 
