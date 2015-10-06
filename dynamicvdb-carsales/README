@@ -22,4 +22,5 @@ Open the admin console to make sure the VDB is deployed
 Step-5: Connecting to a VDB through JDBC
 
 
-
+Note: Teiid upstream Adding a MySQL datasource to JBoss AS 7
+https://zorq.net/b/2011/07/12/adding-a-mysql-datasource-to-jboss-as-7/

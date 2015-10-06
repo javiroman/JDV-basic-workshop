@@ -59,6 +59,7 @@
                                     <mainClass>JDBCClient</mainClass>
                                     <arguments>
                                         <argument>localhost</argument>
+					<!-- JDBC port -->
                                         <argument>31000</argument>
                                         <argument>${vdb}</argument>
                                         <argument>${sql}</argument>
