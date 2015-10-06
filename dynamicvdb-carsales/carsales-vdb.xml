@@ -17,7 +17,7 @@
          <!--
             This connector is defined to reference the MySQL"                                                                                   
           -->
-        <source name="jdbc-connector" translator-name="mysql" connection-jndi-name="java:/MySqlDS"/>
+	<source name="MySourceName" translator-name="mysql5" connection-jndi-name="java:/MyConnectionName"/>
    </model>
 
 </vdb>
