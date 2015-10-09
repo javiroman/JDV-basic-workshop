@@ -4,8 +4,21 @@ mvn -q install -Dvdb="myVDB" -Dsql="select * from carshop" -Dusername="user" -Dp
 # Testing Dynamic VDB
 #
 
-# Simple SQL select:
+# Testing simple model of carsales MySQL database
 # mvn install -Dvdb="CarSalesDatabase" -Dsql="select * from carshop" -Dusername="user" -Dpassword="@123user"
 
-# SQL join:
+# Testing simple model of carsales database with a more complex SQL (join):
+# query -> List the car model information on each car in sales shop
 # mvn -q install -Dvdb="CarSalesDatabase" -Dsql="SELECT carID,models.* FROM shopModels LEFT JOIN models ON models.modID = shopModels.modID;" -Dusername="user" -Dpassword="@123user"
+
+# Testing simple model of carreparis PostgreSQL database
+# mvn -q install -Dvdb="CarSalesRepairsDatabase" -Dsql="select * from works" -Dusername="user" -Dpassword="@123user"
+
+# Testing a virtual table "carshopworks"
+# mvn -q install -Dvdb="CarSalesRepairsDatabase" -Dsql="select * from carshopworks" -Dusername="user" -Dpassword="@123user"
+
+# Testing a federated query:
+# query -> List the car models with engines reparations
+# mvn -q install -Dvdb="CarSalesRepairsDatabase" -Dsql="select * from carshopworks" -Dusername="user" -Dpassword="@123user"
+
+
