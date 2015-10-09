@@ -16,9 +16,3 @@ mvn -q install -Dvdb="myVDB" -Dsql="select * from carshop" -Dusername="user" -Dp
 
 # Testing a virtual table "carshopworks"
 # mvn -q install -Dvdb="CarSalesRepairsDatabase" -Dsql="select * from carshopworks" -Dusername="user" -Dpassword="@123user"
-
-# Testing a federated query:
-# query -> List the car models with engines reparations
-# mvn -q install -Dvdb="CarSalesRepairsDatabase" -Dsql="select * from carshopworks" -Dusername="user" -Dpassword="@123user"
-
-
