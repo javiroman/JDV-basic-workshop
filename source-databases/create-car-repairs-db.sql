@@ -19,10 +19,11 @@ CREATE TABLE garages (
 -- CAR WORKS entity
 DROP TABLE IF EXISTS works;
 CREATE TABLE works (
-  carID char(7) PRIMARY KEY NOT NULL,
+  carID char(7) NOT NULL,
   dateIn char(10) NOT NULL,
   dateOut char(10),
   cost char(10),
+  PRIMARY KEY (carID, dateIn),
   garageID char(4) REFERENCES garages (garageID) 
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -39,9 +40,10 @@ CREATE TABLE repairs (
 DROP TABLE IF EXISTS workRepair;
 CREATE TABLE workRepair (
   carID char(7) NOT NULL,
+  dateIn char(10) NOT NULL,
   repairID char(4) NOT NULL,
-  PRIMARY KEY (carID, repairID),
-  FOREIGN KEY (carID) REFERENCES works (carID)
+  PRIMARY KEY (carID, dateIn, repairID),
+  FOREIGN KEY (carID, dateIn) REFERENCES works (carID, dateIn)
 	ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (repairID) REFERENCES repairs (repairID)
 	ON DELETE CASCADE ON UPDATE CASCADE
@@ -58,14 +60,15 @@ INSERT INTO garages VALUES
 	('G4', 'Garage Four', 'Sevilla');
 
 INSERT INTO works VALUES 
-	('1019GZF', '2008', NULL, NULL, 'G1'),
-	('1030GZF', '2010', NULL, NULL, 'G1'),
-	('2039GRF', '2012', NULL, NULL, 'G1'),
-	('1019RZF', '2015', NULL, NULL, 'G3'),
-	('2019XZF', '2003', NULL, NULL, 'G1'),
-	('3010ABC', '2006', NULL, NULL, 'G4'),
-	('3110ABZ', '2007', NULL, NULL, 'G1'),
-	('2210ABZ', '2007', NULL, NULL, 'G2');
+	('1019GZF', '01/01/2015', NULL, NULL, 'G1'),
+	('1019GZF', '02/01/2015', NULL, NULL, 'G1'),
+	('1030GZF', '02/01/2015', NULL, NULL, 'G1'),
+	('2039GRF', '03/01/2015', NULL, NULL, 'G1'),
+	('1019RZF', '12/01/2015', NULL, NULL, 'G3'),
+	('2019XZF', '02/03/2015', NULL, NULL, 'G1'),
+	('3010ABC', '02/02/2015', NULL, NULL, 'G4'),
+	('3110ABZ', '02/03/2015', NULL, NULL, 'G1'),
+	('2210ABZ', '05/01/2015', NULL, NULL, 'G2');
 
 INSERT INTO repairs VALUES 
 	('R1', 'Scrach', 'Scrach repair'),
@@ -79,25 +82,25 @@ INSERT INTO repairs VALUES
 --
 
 INSERT INTO workRepair VALUES 
-	('1019GZF', 'R1'),
-	('1019GZF', 'R2'),
-	('1019GZF', 'R3'),
-	('1030GZF', 'R4'),
-	('2039GRF', 'R1'),
-	('1019RZF', 'R1'),
-	('2019XZF', 'R1'),
-	('3010ABC', 'R2'),
-	('3110ABZ', 'R4'),
-	('2210ABZ', 'R3');
+	('1019GZF', '01/01/2015', 'R1'),
+	('1019GZF', '01/01/2015', 'R2'),
+	('1019GZF', '02/01/2015', 'R3'),
+	('1030GZF', '02/01/2015', 'R4'),
+	('2039GRF', '03/01/2015', 'R1'),
+	('1019RZF', '12/01/2015', 'R1'),
+	('2019XZF', '02/03/2015', 'R1'),
+	('3010ABC', '02/02/2015', 'R2'),
+	('3110ABZ', '02/03/2015', 'R4'),
+	('2210ABZ', '05/01/2015', 'R3');
 
 --
 -- Regular/Interactive insertions
 --
 
 -- The new car 1111AAA get repairs R1 and R2 from Garage G1
-INSERT INTO works VALUES ('1111AAA', '2008', NULL, NULL, 'G1');
+INSERT INTO works VALUES ('1111AAA', '05/01/2015', NULL, NULL, 'G1');
 INSERT INTO workRepair VALUES
-	('1111AAA', 'R1'),
-	('1111AAA', 'R2');
+	('1111AAA', '05/01/2015', 'R1'),
+	('1111AAA', '05/01/2015', 'R2');
 
 
