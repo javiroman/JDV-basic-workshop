@@ -2,8 +2,7 @@
 
 SQL=$(cat <<EOF
 
-SELECT shopModels.carID,models.model FROM shopModels \
-	LEFT JOIN models ON models.modID = shopModels.modID;
+SELECT \* FROM carshopworks;
 
 EOF
 )
