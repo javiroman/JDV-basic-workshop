@@ -2,8 +2,8 @@
 
 SQL=$(cat <<EOF
 
-SELECT models.modID,repairs.repairID FROM models, repairs
-	ORDER BY models.modID;
+SELECT models.model,repairs.repairID FROM models, repairs
+	ORDER BY models.model;
 
 EOF
 )

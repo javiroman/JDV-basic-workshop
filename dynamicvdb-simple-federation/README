@@ -1,3 +1,7 @@
+This example is the probably the easier DB federation example possible.
+This example uses to physical DB (MySQL and PostgreSQL) and create two
+models with a dynamic VDB for testing DB federation.
+
 Step-1: Setup Data Sources
 
 We have to set up the data source, in this example only is a MySQL database "carsales".

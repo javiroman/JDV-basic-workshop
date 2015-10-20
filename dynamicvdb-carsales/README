@@ -1,3 +1,7 @@
+# 
+# This example is only for testing a simple dynamic VDB with one 
+# of the DB of the workshop.
+#
 Step-1: Setup Data Sources
 
 We have to set up the data source, in this example only is a MySQL database "carsales".
