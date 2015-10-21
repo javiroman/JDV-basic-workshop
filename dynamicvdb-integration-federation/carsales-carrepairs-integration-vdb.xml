@@ -4,14 +4,26 @@
    <description>Dynamic VDB for Carsales and Repairs database federation with integration</description>
    <property name="UseConnectorMetadata" value="true" />
 
-   <model visible="true"  type="VIRTUAL" name="join">
+   <model visible="true"  type="VIRTUAL" name="integration">
 	<!-- We have to create a table for the relationship between CarSales and CarRepairs databases -->
 	<metadata type="DDL"><![CDATA[
 
-		CREATE LOCAL TEMPORARY TABLE temp (
-			plateID varchar(7), 
-			vinID varchar(7)
-		)
+		CREATE VIEW integrationTable (
+		    caridshop string,
+		    carvinrepairs string,
+		    carshopyear string,
+		    carshopcolour string
+		    ) OPTIONS (UPDATABLE 'TRUE') AS 
+		      SELECT B.carPlate, B.carVIN, A.carYear, A.carColour
+		      FROM carsalesmodel.carshop AS A,
+		      carsalesmodel.platesvin AS B
+			where A.carid = B.carPlate
+
+		CREATE TRIGGER ON integrationTable INSTEAD OF INSERT AS 
+		FOR EACH ROW BEGIN 
+			INSERT INTO carsalesmodel.carshop VALUES (NEW.caridshop, NEW.carshopyear, NEW.carshopcolour); 
+			INSERT INTO carsalesmodel.platesvin VALUES (NEW.caridshop, NEW.carvinrepairs); 
+		END
 
         ]]>
         </metadata>
