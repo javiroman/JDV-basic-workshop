@@ -1,6 +1,6 @@
 # JBoss Data Virtualization Simple Workshop
 
-'''
+```
 .
 ├── dynamicvdb-carsales
 │   ├── carsales-vdb.xml
@@ -28,5 +28,5 @@
     ├── ERD/
     ├── JDV-consoles/
     └── SQuirreL/
-'''
+```
 
