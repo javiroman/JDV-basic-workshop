@@ -97,7 +97,7 @@ INSERT INTO workRepair VALUES
 -- Regular/Interactive insertions
 --
 
--- The new car 1111AAA get repairs R1 and R2 from Garage G1
+-- Insert new car with plate 1111AAA with repairs R1 and R2 from Garage G1
 INSERT INTO works VALUES ('1111AAA', '05/01/2015', NULL, NULL, 'G1');
 INSERT INTO workRepair VALUES
 	('1111AAA', '05/01/2015', 'R1'),

@@ -5,19 +5,14 @@
    <property name="UseConnectorMetadata" value="true" />
 
    <model visible="true"  type="VIRTUAL" name="join">
-	<!-- Many-to-many relationship between CarSales and CarRepairs databases -->
+	<!-- We have to create a table for the relationship between CarSales and CarRepairs databases -->
 	<metadata type="DDL"><![CDATA[
 
-		CREATE VIEW carshopworks (
-		    caridshop string,
-		    dateinshop string,
-		    caridworks string
-		    )
-		    AS  
-		      SELECT B.carid, B.datein, A.carid
-		      FROM carsalesmodel.carshop AS A,
-		      carrepairsmodel.works AS B
-			where A.carid = B.carid
+		CREATE LOCAL TEMPORARY TABLE temp (
+			plateID varchar(7), 
+			vinID varchar(7)
+		)
+
         ]]>
         </metadata>
    </model>  

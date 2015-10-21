@@ -61,15 +61,15 @@ INSERT INTO garages VALUES
 	('G4', 'Garage Four', 'Sevilla');
 
 INSERT INTO works VALUES 
-	('1111111', '01/01/2015', NULL, NULL, 'G1'),
-	('1111111', '02/01/2015', NULL, NULL, 'G1'),
-	('2222222', '02/01/2015', NULL, NULL, 'G1'),
-	('3333333', '03/01/2015', NULL, NULL, 'G1'),
-	('4444444', '12/01/2015', NULL, NULL, 'G3'),
-	('5555555', '02/03/2015', NULL, NULL, 'G1'),
-	('6666666', '02/02/2015', NULL, NULL, 'G4'),
-	('7777777', '02/03/2015', NULL, NULL, 'G1'),
-	('8888888', '05/01/2015', NULL, NULL, 'G2');
+	('VIN1111', '01/01/2015', NULL, NULL, 'G1'),
+	('VIN1111', '02/01/2015', NULL, NULL, 'G1'),
+	('VIN2222', '02/01/2015', NULL, NULL, 'G1'),
+	('VIN3333', '03/01/2015', NULL, NULL, 'G1'),
+	('VIN4444', '12/01/2015', NULL, NULL, 'G3'),
+	('VIN5555', '02/03/2015', NULL, NULL, 'G1'),
+	('VIN6666', '02/02/2015', NULL, NULL, 'G4'),
+	('VIN7777', '02/03/2015', NULL, NULL, 'G1'),
+	('VIN8888', '05/01/2015', NULL, NULL, 'G2');
 
 INSERT INTO repairs VALUES 
 	('R1', 'Scrach', 'Scrach repair'),
@@ -83,25 +83,25 @@ INSERT INTO repairs VALUES
 --
 
 INSERT INTO workRepair VALUES 
-	('1111111', '01/01/2015', 'R1'),
-	('1111111', '01/01/2015', 'R2'),
-	('1111111', '02/01/2015', 'R3'),
-	('2222222', '02/01/2015', 'R4'),
-	('3333333', '03/01/2015', 'R1'),
-	('4444444', '12/01/2015', 'R1'),
-	('5555555', '02/03/2015', 'R1'),
-	('6666666', '02/02/2015', 'R2'),
-	('7777777', '02/03/2015', 'R4'),
-	('8888888', '05/01/2015', 'R3');
+	('VIN1111', '01/01/2015', 'R1'),
+	('VIN1111', '01/01/2015', 'R2'),
+	('VIN1111', '02/01/2015', 'R3'),
+	('VIN2222', '02/01/2015', 'R4'),
+	('VIN3333', '03/01/2015', 'R1'),
+	('VIN4444', '12/01/2015', 'R1'),
+	('VIN5555', '02/03/2015', 'R1'),
+	('VIN6666', '02/02/2015', 'R2'),
+	('VIN7777', '02/03/2015', 'R4'),
+	('VIN8888', '05/01/2015', 'R3');
 
 --
 -- Regular/Interactive insertions
 --
 
--- The new car with VIN 1111AAA get repairs R1 and R2 from Garage G1
-INSERT INTO works VALUES ('1111AAA', '05/01/2015', NULL, NULL, 'G1');
+-- Create new car with VIN VIN9999 and repairs R1 and R2 from Garage G1
+INSERT INTO works VALUES ('VIN9999', '05/01/2015', NULL, NULL, 'G1');
 INSERT INTO workRepair VALUES
-	('1111AAA', '05/01/2015', 'R1'),
-	('1111AAA', '05/01/2015', 'R2');
+	('VIN9999', '05/01/2015', 'R1'),
+	('VIN9999', '05/01/2015', 'R2');
 
 
